@@ -72,7 +72,10 @@ if len(winner) - sum(winner) > 1:
                         
             fout.write("Yes\n")
             for i in range(len(l)):
-                fout.write(str(l[-1-i][0]) + " " + str(l[-1-i][1]) + "\n")
+                if i == len(l) - 1:
+                    fout.write(str(l[-1-i][0]) + " " + str(l[-1-i][1]))
+                else:
+                    fout.write(str(l[-1-i][0]) + " " + str(l[-1-i][1]) + "\n")
                 
         else:
             for st in range(1,n+1):
@@ -92,11 +95,21 @@ if len(winner) - sum(winner) > 1:
 
                     if fl == False:
                         stek.pop()
-                        
-            fout.write("Yes\n")
+            winner = [1 for i in range(n)]
             
             for i in range(len(l)):
-                fout.write(str(l[-1-i][0]) + " " + str(l[-1-i][1]) + "\n")
+                winner[l[i][1]-1] = 0
+
+            if sum(winner) > 1:
+                fout.write("No")
+            else:
+                fout.write("Yes\n")
+
+                for i in range(len(l)):
+                    if i == len(l) - 1:
+                        fout.write(str(l[-1-i][0]) + " " + str(l[-1-i][1]))
+                    else:
+                        fout.write(str(l[-1-i][0]) + " " + str(l[-1-i][1]) + "\n")
 else:
     fout.write("No")
 
