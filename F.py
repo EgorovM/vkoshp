@@ -21,9 +21,9 @@ else:
         a1 = math.atan(y/x)
         a2 = math.acos((r1**2 + r2**2 - c**2) / (2*r1*r2))
 
-        if abs(a1) <= f1 and abs(a2) <= f2:
-            fout.write(str(a1) + "\n")
-            fout.write(str(a2))
+        if a1 <= f1 and a2 <= f2:
+            fout.write(str(abs(a1)) + "\n")
+            fout.write(str(abs(a2)))
         else:
             fout.write(str(-1))
     else:
@@ -38,15 +38,15 @@ else:
         a1 = math.atan(y1/x1)
         a2 = math.acos((r1**2 + r2**2 - c**2) / (2*r1*r2))
 
-        if abs(a1) <= f1 and abs(a2) <= f2:
-            fout.write(str(a1) + "\n")
-            fout.write(str(a2))
+        if a1 <= f1 and a2 <= f2:
+            fout.write(str(abs(a1)) + "\n")
+            fout.write(str(abs(a2)))
         else:
             a1 = math.atan(y2/x2)
 
-            if abs(a1) <= f1 and abs(a2) <= f2:
-                fout.write(str(a1) + "\n")
-                fout.write(str(a2))
+            if a1 <= f1 and a2 <= f2:
+                fout.write(str(abs(a1)) + "\n")
+                fout.write(str(abs(a2)))
             else:
                 fout.write(str(-1))
 
