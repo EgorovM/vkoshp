@@ -10,7 +10,7 @@ k2 = y0 / x0
 d = 4*(k1**2)*(k2**2) - 4*(k1**2 - r1**2)*(k2**2 + 1)
 
 if d < 0:
-    print(-1)
+    fout.write(str(-1))
 else:
     if d == 0:
         y = (2*k1*k2) / (2*(k2**2 + 1))
@@ -22,8 +22,8 @@ else:
         a2 = math.acos((r1**2 + r2**2 - c**2) / (2*r1*r2))
 
         if abs(a1) <= f1 and abs(a2) <= f2:
-            fout.write(str(round(a1, 5)) + "\n")
-            fout.write(str(round(a2, 5)))
+            fout.write(str(a1) + "\n")
+            fout.write(str(a2))
         else:
             fout.write(str(-1))
     else:
@@ -39,14 +39,14 @@ else:
         a2 = math.acos((r1**2 + r2**2 - c**2) / (2*r1*r2))
 
         if abs(a1) <= f1 and abs(a2) <= f2:
-            fout.write(str(round(a1, 5)) + "\n")
-            fout.write(str(round(a2, 5)))
+            fout.write(str(a1) + "\n")
+            fout.write(str(a2))
         else:
             a1 = math.atan(y2/x2)
 
             if abs(a1) <= f1 and abs(a2) <= f2:
-                fout.write(str(round(a1, 5)) + "\n")
-                fout.write(str(round(a2, 5)))
+                fout.write(str(a1) + "\n")
+                fout.write(str(a2))
             else:
                 fout.write(str(-1))
 
