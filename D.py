@@ -5,17 +5,17 @@ n = int(fin.readline())
 l = list(map(int,fin.readline().split()))
 l.sort()
 
-d = l[1] - l[0]
+d = (l[-1] - l[0]) // n
 
-s = 0
+res = 0
 
-for i in range(2,len(l)):
-    if l[i] - l[i-1] == d * 2:
-        fout.write(str(l[i-1] + d))
+for i in range(1,len(l)):
+    if l[i] - l[i-1] != d:
+        res = l[i-1] + d
         break
-    elif l[i] - l[i-1] == d // 2:
-        fout.write(str(l[0] + d // 2))
-        break
+
+
+fout.write(str(res))
 
 fin.close()
 fout.close()
