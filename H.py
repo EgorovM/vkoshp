@@ -72,7 +72,7 @@ if len(winner) - sum(winner) > 1:
         for i in range(len(l)):
             winner[l[i][1]-1] = 0
             
-        if len(winner) - sum(winner) > 1:
+        if sum(winner) > 1:
             fout.write("No")
         else:
             fout.write("Yes\n")
