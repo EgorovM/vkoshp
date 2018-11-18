@@ -1,8 +1,11 @@
-N,A,S = list(map(int,input().split()))
+fin = open("input.txt","r")
+fout = open("output.txt","w")
+
+N,A,S = list(map(int,fin.readline().split()))
 Q = 0
 
 for i in range(N):
-    a = list(map(int,input().split()))
+    a = list(map(int,fin.readline().split()))
 
     if A >= a[1]:
         if a[2] - 2*a[0]*S > -a[0]*S:
@@ -12,4 +15,7 @@ for i in range(N):
         else:
             Q += a[0]*S
 
-print(A-Q)
+fout.write(str(A-Q))
+
+fin.close()
+fout.close()
